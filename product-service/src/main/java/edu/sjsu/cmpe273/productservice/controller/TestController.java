@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
 @RestController
-@RequestMapping("/api/test")
+@RequestMapping("/api/v1/test")
 @RequestScope
 public class TestController {
 

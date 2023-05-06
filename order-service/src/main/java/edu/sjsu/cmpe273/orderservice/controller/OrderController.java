@@ -19,7 +19,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.function.Supplier;
 
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/api/v1/order")
 @Slf4j
 @RequiredArgsConstructor
 public class OrderController {

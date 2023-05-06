@@ -12,7 +12,7 @@ import java.util.List;
  * Product Controller
  */
 @RestController
-@RequestMapping("/api/product")
+@RequestMapping("/api/v1/product")
 @RequiredArgsConstructor
 public class ProductController {
 
@@ -26,7 +26,24 @@ public class ProductController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void createProduct(@RequestBody Product product) {
+    public String createProduct(@RequestBody Product product) {
         productRepository.save(product);
+        return "Product created successfully";
     }
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    public String updateProduct(@RequestBody Product product) {
+        productRepository.save(product);
+        return "Product updated successfully.";
+    }
+
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.OK)
+    public String deleteProduct(@PathVariable String id) {
+        productRepository.deleteById(id);
+        return "Product deleted successfully.";
+    }
+
+
 }
